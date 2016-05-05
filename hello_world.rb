@@ -4,7 +4,9 @@ require 'sinatra'
 require 'sinatra/reloader'
 
 get '/' do
-  "Hello, World!"
+  @title = 'Hello World!'
+  @subtitle = 'Welcome to the world of sinatra and ruby.'
+  erb :index
 end
 
 get '/hello/:name' do

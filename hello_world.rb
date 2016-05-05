@@ -12,3 +12,9 @@ end
 get '/hello/:name' do
   "Hello, #{params['name']}"
 end
+
+get '/env/' do
+  @title = 'Environment'
+  @env = env
+  erb :environment
+end

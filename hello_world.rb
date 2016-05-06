@@ -1,5 +1,5 @@
 # coding: utf-8
-#
+
 require 'sinatra'
 require 'sinatra/reloader'
 
@@ -15,6 +15,7 @@ end
 
 get '/env/' do
   @title = 'Environment'
+  @subtitle = 'Environment Variables'
   @env = env
   erb :environment
 end

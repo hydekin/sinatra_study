@@ -13,9 +13,15 @@ get '/hello/:name' do
   "Hello, #{params['name']}"
 end
 
-get '/env/' do
+get '/env' do
   @title = 'Environment'
   @subtitle = 'Environment Variables'
   @env = env
   erb :environment
+end
+
+get %r{/\A((?:sp|gr)eedy)\z} do |c|
+  @title = 'undefined route'
+  @message = 'You got cought in the #{c} route!'
+  erb :showmsg
 end
